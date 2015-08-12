@@ -1,0 +1,34 @@
+{
+	"name": "SlimboxThumbs",
+	"version": "2015-08-12",
+	"author": [
+		"[http://yourcmc.ru/wiki/User:VitaliyFilippov Vitaliy Filippov]",
+		"[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]",
+		"페네트-"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:SlimboxThumbs",
+	"descriptionmsg": "slimboxthumbs-desc",
+	"type": "other",
+	"MessagesDirs": {
+		"SlimboxThumbs": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"SlimboxThumbs": "SlimboxThumbs.i18n.php"
+	},
+	"AutoloadClasses": {
+		"SlimboxThumbs": "SlimboxThumbs.class.php"
+	},
+	"Hooks": {
+		"BeforePageDisplay": [
+			"SlimboxThumbs::efSBTAddScripts"
+		]
+	},
+	"config": {
+		"AjaxExportList": [
+			"SlimboxThumbs::efSBTGetImageSizes",
+			"SlimboxThumbs::efSBTRemoteThumb"
+		]
+	}
+}
