@@ -63,11 +63,12 @@ function makeSlimboxThumbs( $, pathRegexp, wgFullScriptPath ) {
 			}, function() { return true; });
 		};
 		$.ajax({
-			url: wgFullScriptPath+'/index.php?action=ajax',
-			type: 'POST',
+			url: mw.util.wikiScript('api'),
+			type: 'GET',
 			dataType: 'json',
 			data: {
-				rs: 'efSBTGetImageSizes',
+				action: 'efSBTGetImageSizes',
+				format: 'json',
 				'rsargs[]': [ names.join( ':' ) ]
 			},
 			success: cb
